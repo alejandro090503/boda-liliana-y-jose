@@ -393,7 +393,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .cd-wrap{position:relative;max-width:380px;margin:0 auto}
 .cd-ring{position:absolute;inset:-10px;border-radius:14px;border:1px solid rgba(203,176,110,.1);pointer-events:none;animation:cdRing 4.5s ease-in-out infinite}
 @keyframes cdRing{0%,100%{border-color:rgba(203,176,110,.1);box-shadow:0 0 0 0 rgba(203,176,110,0)}50%{border-color:rgba(203,176,110,.26);box-shadow:0 0 30px rgba(203,176,110,.07)}}
-.cd-para{font-family:'Italiana',serif;font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.42;display:block;text-align:center;margin-top:16px}
+.cd-para{font-family:'Italiana',serif;font-size:14px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.85;display:block;text-align:center;margin-top:16px}
 .cd-value{text-shadow:0 0 28px rgba(203,176,110,.12)}
 
 /* ── FAMILIAS RINGS ── */
@@ -502,6 +502,21 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .footer-orn-line .fo-line:last-child{background:linear-gradient(to left,transparent,#e8d49a)}
 .footer-orn-line .fo-diamond{width:5px;height:5px;background:#cbb06e;transform:rotate(45deg)}
 
+/* ── SOBRE INTERACTIVO (lluvia de sobres) ── */
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0}
+.env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite}
+.env-body svg.env-svg{width:100%;height:100%}
+.env-flap-wrap{position:absolute;top:46px;left:18px;width:224px;height:86px;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
+.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px;text-align:center;pointer-events:none}
+.env-interactive.open .env-open-content{max-height:240px;opacity:1;pointer-events:auto}
+.env-mailbox-icon{width:40px;height:40px;color:var(--gold);margin-top:10px}
+.env-title{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--text);letter-spacing:.5px;line-height:1.2}
+.env-desc{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--text);opacity:.75;line-height:1.75}
+.env-tap-hint{font-family:'Italiana',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px;transition:opacity .3s}
+.env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none}
+@keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -537,11 +552,9 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       <div class="hero-corner hc-br"><svg viewBox="0 0 24 24" fill="none"><path d="M1 1L1 11M1 1L11 1" stroke="#cbb06e" stroke-width="1.4" opacity=".7"/></svg></div>
     </div>
     <div class="hero-content">
-      <span class="hero-tag rv">Estado de México</span>
       <span class="hero-bride rv">Liliana</span>
       <span class="hero-amp rv">&amp;</span>
       <span class="hero-groom rv">José Antonio</span>
-      <span class="hero-date rv">Sábado · 19 de Diciembre · 2026</span>
     </div>
     <div class="scroll-hint" id="scrollHint">
       <div class="scroll-hint-line"></div>
@@ -556,25 +569,21 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <span class="intro-corner ic-tr"><svg viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M7 7 C26 19 41 29 57 30" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M7 7 C19 26 29 41 30 57" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M30 21 q9 -7 18 -3 q-7 8 -18 3Z" fill="#cbb06e" opacity=".24"/><path d="M45 26 q9 -6 17 -1 q-8 8 -17 1Z" fill="#cbb06e" opacity=".2"/><path d="M21 30 q-7 9 -3 18 q8 -7 3 -18Z" fill="#cbb06e" opacity=".24"/><path d="M26 45 q-6 9 -1 17 q8 -8 1 -17Z" fill="#cbb06e" opacity=".2"/><g transform="translate(12,12)" stroke="#cbb06e" stroke-width="1" opacity=".62" fill="none"><ellipse cx="0" cy="-7.5" rx="3" ry="6.5"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(72)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(144)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(216)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(288)"/><circle cx="0" cy="0" r="2" fill="#cbb06e"/></g></svg></span>
     <span class="intro-corner ic-bl"><svg viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M7 7 C26 19 41 29 57 30" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M7 7 C19 26 29 41 30 57" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M30 21 q9 -7 18 -3 q-7 8 -18 3Z" fill="#cbb06e" opacity=".24"/><path d="M45 26 q9 -6 17 -1 q-8 8 -17 1Z" fill="#cbb06e" opacity=".2"/><path d="M21 30 q-7 9 -3 18 q8 -7 3 -18Z" fill="#cbb06e" opacity=".24"/><path d="M26 45 q-6 9 -1 17 q8 -8 1 -17Z" fill="#cbb06e" opacity=".2"/><g transform="translate(12,12)" stroke="#cbb06e" stroke-width="1" opacity=".62" fill="none"><ellipse cx="0" cy="-7.5" rx="3" ry="6.5"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(72)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(144)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(216)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(288)"/><circle cx="0" cy="0" r="2" fill="#cbb06e"/></g></svg></span>
     <span class="intro-corner ic-br"><svg viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M7 7 C26 19 41 29 57 30" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M7 7 C19 26 29 41 30 57" stroke="#cbb06e" stroke-width="1" opacity=".5"/><path d="M30 21 q9 -7 18 -3 q-7 8 -18 3Z" fill="#cbb06e" opacity=".24"/><path d="M45 26 q9 -6 17 -1 q-8 8 -17 1Z" fill="#cbb06e" opacity=".2"/><path d="M21 30 q-7 9 -3 18 q8 -7 3 -18Z" fill="#cbb06e" opacity=".24"/><path d="M26 45 q-6 9 -1 17 q8 -8 1 -17Z" fill="#cbb06e" opacity=".2"/><g transform="translate(12,12)" stroke="#cbb06e" stroke-width="1" opacity=".62" fill="none"><ellipse cx="0" cy="-7.5" rx="3" ry="6.5"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(72)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(144)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(216)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(288)"/><circle cx="0" cy="0" r="2" fill="#cbb06e"/></g></svg></span>
-    <img class="intro-logo stagger-child" src="logo-le.png" alt="Monograma Liliana y José Antonio" width="200" height="246">
     <span class="eyebrow stagger-child">Con la bendición de Dios<br>y de nuestros padres</span>
     <h1 class="heading intro-names stagger-child">Liliana Vega Tapia</h1>
     <span class="intro-amp stagger-child">&amp;</span>
-    <p class="heading intro-names stagger-child">José Antonio Santiago Castellanos</p>
+    <h2 class="heading intro-names stagger-child">José Antonio Santiago Castellanos</h2>
     <span class="eyebrow stagger-child" style="margin-top:22px;font-size:12.5px;letter-spacing:.2em">Tenemos el honor de invitarles<br>a celebrar nuestra unión en matrimonio</span>
     <div class="orn bot stagger-child" style="margin-top:18px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <p class="stagger-child" style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);line-height:1.7;margin-top:16px">Sábado 19 de Diciembre de 2026</p>
     <div class="invite-verse stagger-child">
-      <p class="invite-verse-rut">A dónde tú vayas, iré yo.<br>Dónde tú vivas, viviré yo.<br>Tu pueblo será mi pueblo<br>y tu Dios será mi Dios.</p>
-      <p>Porque el amor no solamente es sentir, es elegir.</p>
-      <p>El amor no promete perfección, promete permanencia, promete quedarse cuando todos se van.</p>
-      <p class="invite-verse-end">Promete elegir el mismo corazón una vez más, porque cuando Dios une dos corazones con verdad, ni el tiempo, ni la distancia los podrá separar.</p>
+      <p class="invite-verse-rut">El amor es paciente, es bondadoso.<br>No envidia, no se jacta,<br>no se envanece.<br>Todo lo sufre, todo lo cree,<br>todo lo espera, todo lo soporta.<br>El amor nunca deja de ser.</p>
     </div>
   </section>
 
   <!-- CUENTA REGRESIVA -->
   <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
-    <span class="eyebrow">Faltan</span>
+    <span class="eyebrow" style="font-size:18px;letter-spacing:.3em;opacity:1;color:var(--gold)">Faltan</span>
     <div class="cd-wrap">
     <div class="cd-ring"></div>
     <div class="card" style="margin:0 auto">
@@ -707,81 +716,13 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
 
     <div class="dc-figs rv">
-      <!-- Caballero: silueta editorial de smoking con bow tie y solapas -->
       <div class="dc-fig">
-        <svg viewBox="0 0 90 180" width="78" height="156" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="dcGoldA" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#8a7535"/>
-              <stop offset="50%" stop-color="#e8d49a"/>
-              <stop offset="100%" stop-color="#8a7535"/>
-            </linearGradient>
-          </defs>
-          <!-- hombros: línea elegante -->
-          <path d="M22 34 Q31 28 45 28 Q59 28 68 34" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linecap="round"/>
-          <!-- cuello -->
-          <path d="M40 28 L45 36 L50 28" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- bow tie -->
-          <path d="M40 34 L45 37 L50 34 L50 40 L45 37 L40 40 Z" fill="url(#dcGoldA)" opacity=".88"/>
-          <circle cx="45" cy="37" r="1.1" fill="#f4efe3"/>
-          <!-- solapas izquierda y derecha (satinadas) -->
-          <path d="M22 34 L31 64 L45 50 L45 38" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <path d="M68 34 L59 64 L45 50 L45 38" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- cuerpo (saco) -->
-          <path d="M22 34 L18 100 L24 118 Q33 122 45 122 Q57 122 66 118 L72 100 L68 34" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- abertura central -->
-          <path d="M45 50 L45 118" stroke="url(#dcGoldA)" stroke-width=".7" opacity=".7"/>
-          <!-- botones -->
-          <circle cx="45" cy="74" r="1.2" fill="url(#dcGoldA)"/>
-          <circle cx="45" cy="92" r="1.2" fill="url(#dcGoldA)"/>
-          <circle cx="45" cy="110" r="1.2" fill="url(#dcGoldA)"/>
-          <!-- pochette (pañuelo) -->
-          <path d="M27 60 L33 56 L31 64 L27 60 Z" fill="url(#dcGoldA)" opacity=".55"/>
-          <!-- pantalón con costura -->
-          <path d="M24 118 L28 174 L40 174 L42 122" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <path d="M66 118 L62 174 L50 174 L48 122" stroke="url(#dcGoldA)" stroke-width="1.1" stroke-linejoin="round"/>
-          <path d="M35 122 L31 174" stroke="url(#dcGoldA)" stroke-width=".55" opacity=".5"/>
-          <path d="M55 122 L59 174" stroke="url(#dcGoldA)" stroke-width=".55" opacity=".5"/>
-          <!-- base zapatos -->
-          <path d="M27 175 L41 175" stroke="url(#dcGoldA)" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M49 175 L63 175" stroke="url(#dcGoldA)" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
+        <img src="caballero.png" alt="Caballero, traje formal" loading="lazy" style="width:78px;height:auto;filter:drop-shadow(0 4px 14px rgba(203,176,110,.18))">
         <span class="dc-fig-ttl">Caballeros</span>
         <span class="dc-fig-sub">Traje</span>
       </div>
-      <!-- Dama: silueta editorial de vestido largo de gala -->
       <div class="dc-fig">
-        <svg viewBox="0 0 90 180" width="78" height="156" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="dcGoldB" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#8a7535"/>
-              <stop offset="50%" stop-color="#e8d49a"/>
-              <stop offset="100%" stop-color="#8a7535"/>
-            </linearGradient>
-          </defs>
-          <!-- hombros con tirantes finos -->
-          <path d="M30 30 Q36 24 45 24 Q54 24 60 30" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linecap="round"/>
-          <!-- escote en V -->
-          <path d="M34 30 L45 50 L56 30" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- corpiño laterales -->
-          <path d="M30 30 Q28 50 32 70" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linecap="round"/>
-          <path d="M60 30 Q62 50 58 70" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linecap="round"/>
-          <!-- cintura ajustada -->
-          <path d="M32 70 Q40 74 45 74 Q50 74 58 70" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- detalles del corpiño (líneas verticales sutiles) -->
-          <path d="M40 38 L40 70" stroke="url(#dcGoldB)" stroke-width=".5" opacity=".55"/>
-          <path d="M45 50 L45 70" stroke="url(#dcGoldB)" stroke-width=".5" opacity=".55"/>
-          <path d="M50 38 L50 70" stroke="url(#dcGoldB)" stroke-width=".5" opacity=".55"/>
-          <!-- falda larga con vuelo elegante -->
-          <path d="M32 70 Q22 110 16 176 L74 176 Q68 110 58 70" stroke="url(#dcGoldB)" stroke-width="1.1" stroke-linejoin="round"/>
-          <!-- pliegues sutiles de la falda -->
-          <path d="M36 80 Q34 120 30 174" stroke="url(#dcGoldB)" stroke-width=".55" opacity=".5"/>
-          <path d="M42 80 Q41 122 39 174" stroke="url(#dcGoldB)" stroke-width=".55" opacity=".5"/>
-          <path d="M48 80 Q49 122 51 174" stroke="url(#dcGoldB)" stroke-width=".55" opacity=".5"/>
-          <path d="M54 80 Q56 120 60 174" stroke="url(#dcGoldB)" stroke-width=".55" opacity=".5"/>
-          <!-- detalle cintura (lazo sutil) -->
-          <path d="M40 73 Q45 71 50 73 L48 78 L42 78 Z" fill="url(#dcGoldB)" opacity=".4"/>
-        </svg>
+        <img src="dama.png" alt="Dama, vestido largo" loading="lazy" style="width:78px;height:auto;filter:drop-shadow(0 4px 14px rgba(203,176,110,.18))">
         <span class="dc-fig-ttl">Damas</span>
         <span class="dc-fig-sub">Vestido largo</span>
       </div>
@@ -858,11 +799,52 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
         Copiar CLABE
       </button>
     </div>
-    <!-- Lluvia de sobres -->
-    <div class="gift-frame rv" style="margin-top:20px">
-      <div class="g-corner tl"></div><div class="g-corner tr"></div>
-      <div class="g-corner bl"></div><div class="g-corner br"></div>
-      <p class="gift-msg" style="margin:0;font-size:16px">También puedes obsequiarnos con una lluvia de sobres el día del evento.</p>
+    <!-- Lluvia de sobres interactivo -->
+    <div style="margin:28px auto 0;display:flex;flex-direction:column;align-items:center;gap:0;" class="rv">
+      <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
+        <div class="env-body">
+          <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="la-env-fill" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f0ebe0"/>
+                <stop offset="100%" stop-color="#f8f4ed"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#la-env-fill)" stroke="rgba(203,176,110,.45)" stroke-width="1.4"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(203,176,110,.3)" stroke-width="1" fill="none"/>
+            <line x1="90" y1="30" x2="90" y2="20" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="130" y1="24" x2="130" y2="14" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+            <line x1="170" y1="30" x2="170" y2="20" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="110" y1="18" x2="110" y2="10" stroke="#e8d49a" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+            <line x1="150" y1="18" x2="150" y2="10" stroke="#e8d49a" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+            <circle cx="130" cy="118" r="16" fill="rgba(203,176,110,.12)" stroke="rgba(203,176,110,.45)" stroke-width="1"/>
+            <text x="130" y="123" text-anchor="middle" font-family="'Pinyon Script',cursive" font-size="13" fill="#8a7535" opacity=".85">L&amp;A</text>
+          </svg>
+          <div class="env-flap-wrap" aria-hidden="true">
+            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
+              <defs>
+                <linearGradient id="la-flap-fill" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#e8d49a"/>
+                  <stop offset="100%" stop-color="#f0ebe0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#la-flap-fill)" stroke="rgba(203,176,110,.45)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="env-open-content" aria-live="polite">
+          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="8" y="22" width="36" height="24" rx="5"/>
+            <path d="M8 30 Q26 38 44 30"/>
+            <rect x="18" y="8" width="16" height="16" rx="2"/>
+            <path d="M18 8 Q26 3 34 8"/>
+            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+          </svg>
+          <p class="env-title">Lluvia de Sobres</p>
+          <p class="env-desc">El día del evento habrá un buzón especial<br>donde podrás depositar tu sobre con mucho cariño.</p>
+        </div>
+      </button>
+      <p class="env-tap-hint">Toca el sobre</p>
     </div>
   </section>
 
@@ -1177,6 +1159,21 @@ function initMain(){
     window.addEventListener('touchmove',function(e){ if(!isDrag)return; var dx=e.touches[0].clientX-startX; vel=(e.touches[0].clientX-lastX)*0.5; lastX=e.touches[0].clientX; setRot(startRot+dx*0.45); },{passive:true});
     window.addEventListener('touchend',function(){ if(!isDrag)return; isDrag=false; rafId=requestAnimationFrame(inertia); });
     setTimeout(function(){ vel=6; rafId=requestAnimationFrame(inertia); },700);
+  })();
+
+  /* ── SOBRE INTERACTIVO (lluvia de sobres) ── */
+  (function(){
+    var btn = document.querySelector('.env-interactive');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var isOpen = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    btn.addEventListener('touchstart', function(e){
+      e.preventDefault();
+      var isOpen = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }, {passive:false});
   })();
 
   /* ── RSVP (panel-invitados API + ?para=&pases=) ── */
