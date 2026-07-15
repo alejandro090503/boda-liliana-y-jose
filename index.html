@@ -37,7 +37,7 @@
   /* paneles con bordes difuminados (fade a --bg arriba y abajo) */
   --soft:linear-gradient(180deg,var(--bg) 0%,var(--surface) 15%,var(--surface) 85%,var(--bg) 100%);
   /* dorado metálico para textos y marcos */
-  --gold-grad:linear-gradient(135deg,#8a7535 0%,#cbb06e 26%,#f2dfa0 50%,#cbb06e 74%,#8a7535 100%);
+  --gold-grad:linear-gradient(135deg,#9e8732 0%,#cbb06e 30%,#d4bc78 50%,#cbb06e 70%,#9e8732 100%);
 }
 /* ── DORADO METÁLICO ── */
 .gold-metal{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#cbb06e}
@@ -88,7 +88,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .eyebrow{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:600;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:14px;line-height:1.7;display:block}
 .heading{font-family:'Pinyon Script',cursive;font-size:56px;text-align:center;line-height:1.16;padding:.04em 0;margin-bottom:6px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#cbb06e}
 .heading-sm{font-family:'Pinyon Script',cursive;font-size:42px;text-align:center;line-height:1.16;padding:.04em 0;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#cbb06e}
-.sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);text-align:center;margin-bottom:0;opacity:.85;line-height:1.65}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dark);text-align:center;margin-bottom:0;opacity:1;line-height:1.65}
 .italiana{font-family:'Italiana',serif;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark)}
 
 /* ── SCROLL HINT ── */
@@ -169,7 +169,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .itin-dot{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);border-radius:1px;margin-bottom:14px;box-shadow:0 0 0 4px rgba(203,176,110,.12),0 0 14px rgba(203,176,110,.35)}
 .itin-dot.sage{background:var(--accent);box-shadow:0 0 0 4px rgba(165,140,120,.2),0 0 14px rgba(165,140,120,.4)}
 .itin-time{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;letter-spacing:4px;color:var(--dark);line-height:1;margin-bottom:6px}
-.itin-ev{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;letter-spacing:.5px;color:var(--dark);opacity:.85}
+.itin-ev{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;letter-spacing:.5px;color:var(--dark);opacity:1}
 .itin-item:last-child{padding-bottom:0}
 
 /* ── DRESS CODE (editorial, sin cards) ── */
@@ -178,21 +178,21 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .dc-fig{display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 6px;background:transparent}
 .dc-fig svg{display:block;filter:drop-shadow(0 4px 14px rgba(203,176,110,.18))}
 .dc-fig-ttl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);line-height:1}
-.dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text);opacity:.7;margin-top:-8px}
+.dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--dark);opacity:1;margin-top:-8px}
 .dc-avoid-wrap{margin-top:8px;padding-top:24px;border-top:1px solid rgba(203,176,110,.18);max-width:340px;margin-left:auto;margin-right:auto}
 .dc-avoid-lbl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;display:block;margin-bottom:18px}
 .dc-avoid-row{display:flex;justify-content:center;gap:22px;margin-bottom:22px;flex-wrap:wrap}
 .dc-avoid-sw{display:flex;flex-direction:column;align-items:center;gap:8px}
 .dc-avoid-circle{width:38px;height:38px;border-radius:50%;box-shadow:0 2px 10px rgba(51,40,30,.18),inset 0 1px 2px rgba(255,255,255,.3);position:relative}
 .dc-avoid-circle::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(203,176,110,.35)}
-.dc-avoid-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--text);opacity:.72;text-align:center;max-width:60px;line-height:1.4}
-.dc-avoid-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--text);text-align:center;line-height:1.7;opacity:.78;max-width:300px;margin:0 auto}
+.dc-avoid-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--dark);opacity:1;text-align:center;max-width:60px;line-height:1.4}
+.dc-avoid-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dark);text-align:center;line-height:1.7;opacity:1;max-width:300px;margin:0 auto}
 .no-kids{display:flex;align-items:flex-start;gap:14px;border:1px solid var(--border);border-radius:4px;padding:18px 18px;margin-top:22px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dark);line-height:1.7;background:rgba(203,176,110,.04)}
 .no-kids svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
 /* ── REGALOS ── */
 #regalos .eyebrow{color:var(--gold)}
-.gift-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.85;color:var(--text);opacity:.88;text-align:center;margin:0 auto 28px;max-width:340px}
+.gift-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.85;color:var(--dark);opacity:1;text-align:center;margin:0 auto 28px;max-width:340px}
 .gift-opts{display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto}
 .gift-opt{background:rgba(254,252,248,.04);border:1px solid rgba(203,176,110,.2);border-radius:4px;padding:26px 24px;text-align:center;position:relative}
 .gift-opt::before{content:'';position:absolute;inset:8px;border:1px solid rgba(203,176,110,.08);pointer-events:none}
@@ -252,7 +252,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 #footer{padding:96px 32px 52px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,#241c12 16%,#33281e 48%,#2a2114 72%,#1a1410 100%);position:relative;overflow:visible}
 #footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(203,176,110,.06) 0%,transparent 70%);pointer-events:none}
 #footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,rgba(203,176,110,.3),rgba(232,203,145,.5),rgba(203,176,110,.3),transparent)}
-.footer-date{font-family:'Italiana',serif;font-size:13px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.55;margin-top:16px}
+.footer-date{font-family:'Italiana',serif;font-size:13px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:1;margin-top:16px}
 .footer-hr{width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:28px auto 18px;opacity:.3}
 .footer-credit{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.5px;color:rgba(203,176,110,.3);text-decoration:none;display:block;transition:color .3s}
 .footer-credit:hover{color:var(--gold)}
@@ -382,8 +382,8 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .sec-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none;z-index:-1}
 
 /* ── INVITACIÓN VERSE ── */
-.invite-verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(14.5px,3.6vw,16px);line-height:1.85;color:var(--text);text-align:center;opacity:.85;max-width:340px;margin:28px auto 0;padding:30px 8px 22px;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);position:relative}
-.invite-verse::before{content:'\201C';position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-family:'Pinyon Script',cursive;font-size:58px;color:var(--gold);opacity:.28;line-height:1;pointer-events:none}
+.invite-verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(14.5px,3.6vw,16px);line-height:1.85;color:var(--dark);text-align:center;opacity:1;max-width:340px;margin:28px auto 0;padding:30px 8px 22px;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);position:relative}
+.invite-verse::before{content:'\201C';position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-family:'Pinyon Script',cursive;font-size:58px;color:var(--gold);opacity:.6;line-height:1;pointer-events:none}
 .invite-verse p{margin:0 auto;max-width:320px}
 .invite-verse p + p{margin-top:14px}
 .invite-verse-rut{font-family:'Pinyon Script',cursive!important;font-style:normal!important;font-size:clamp(22px,5.4vw,26px)!important;color:#8a7535!important;line-height:1.45!important;opacity:1!important;letter-spacing:.01em;margin-bottom:18px!important;padding-bottom:14px;border-bottom:1px solid var(--border-light);max-width:300px!important}
@@ -577,7 +577,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <div class="orn bot stagger-child" style="margin-top:18px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <p class="stagger-child" style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);line-height:1.7;margin-top:16px">Sábado 19 de Diciembre de 2026</p>
     <div class="invite-verse stagger-child">
-      <p class="invite-verse-rut">El amor es paciente, es bondadoso.<br>No envidia, no se jacta,<br>no se envanece.<br>Todo lo sufre, todo lo cree,<br>todo lo espera, todo lo soporta.<br>El amor nunca deja de ser.</p>
+      <p class="invite-verse-rut">Mejores son dos que uno,<br>porque obtienen más fruto<br>de su esfuerzo.<br>Si caen, el uno levanta al otro.<br>La cuerda de tres hilos<br>no se rompe fácilmente.</p>
     </div>
   </section>
 
@@ -784,8 +784,10 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       <p class="gift-msg" style="margin:0">Tu presencia es nuestro regalo más preciado. Si deseas obsequiarnos algo, con cariño preparamos nuestra lista en Liverpool.</p>
     </div>
     <!-- Liverpool -->
+    <div class="rv" style="margin-top:24px;text-align:center">
+      <img src="liverpool-logo.png" alt="Liverpool" style="max-width:180px;height:auto;margin:0 auto 16px;display:block">
+    </div>
     <a href="https://mesaderegalos.liverpool.com.mx/gestiondeeventos/listaderegalos/52014909" target="_blank" rel="noopener" class="gift-btn rv">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       Ver lista en Liverpool
     </a>
     <!-- Transferencia bancaria -->
