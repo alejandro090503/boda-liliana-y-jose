@@ -186,7 +186,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .dc-avoid-circle{width:38px;height:38px;border-radius:50%;box-shadow:0 2px 10px rgba(51,40,30,.18),inset 0 1px 2px rgba(255,255,255,.3);position:relative}
 .dc-avoid-circle::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(203,176,110,.35)}
 .dc-avoid-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--dark);opacity:1;text-align:center;max-width:60px;line-height:1.4}
-.dc-avoid-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dark);text-align:center;line-height:1.7;opacity:1;max-width:300px;margin:0 auto}
+.dc-avoid-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dark);text-align:center;line-height:1.65;opacity:1;max-width:360px;margin:0 auto}
 .no-kids{display:flex;align-items:flex-start;gap:14px;border:1px solid var(--border);border-radius:4px;padding:18px 18px;margin-top:22px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dark);line-height:1.7;background:rgba(203,176,110,.04)}
 .no-kids svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
@@ -502,20 +502,6 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .footer-orn-line .fo-line:last-child{background:linear-gradient(to left,transparent,#e8d49a)}
 .footer-orn-line .fo-diamond{width:5px;height:5px;background:#cbb06e;transform:rotate(45deg)}
 
-/* ── SOBRE INTERACTIVO (lluvia de sobres) ── */
-.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0}
-.env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite}
-.env-body svg.env-svg{width:100%;height:100%}
-.env-flap-wrap{position:absolute;top:46px;left:18px;width:224px;height:86px;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
-.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
-.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px;text-align:center;pointer-events:none}
-.env-interactive.open .env-open-content{max-height:240px;opacity:1;pointer-events:auto}
-.env-mailbox-icon{width:40px;height:40px;color:var(--gold);margin-top:10px}
-.env-title{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--text);letter-spacing:.5px;line-height:1.2}
-.env-desc{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--text);opacity:.75;line-height:1.75}
-.env-tap-hint{font-family:'Italiana',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px;transition:opacity .3s}
-.env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none}
-@keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
@@ -778,58 +764,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     </div>
     <!-- Liverpool -->
     <div class="rv" style="margin-top:24px;text-align:center">
-      <img src="liverpool-logo.png" alt="Liverpool" style="max-width:180px;height:auto;margin:0 auto 16px;display:block">
+      <img src="liverpool-logo.png" alt="Liverpool" style="max-width:180px;height:auto;margin:0 auto 14px;display:block">
+      <p class="gift-msg" style="margin:0;font-size:16px"><strong style="font-weight:600">Número de evento:</strong> 5201 4909</p>
     </div>
     <a href="https://mesaderegalos.liverpool.com.mx/gestiondeeventos/listaderegalos/52014909" target="_blank" rel="noopener" class="gift-btn rv">
       Ver lista en Liverpool
     </a>
-    <!-- Lluvia de sobres interactivo -->
-    <div style="margin:28px auto 0;display:flex;flex-direction:column;align-items:center;gap:0;" class="rv">
-      <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
-        <div class="env-body">
-          <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="la-env-fill" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#f0ebe0"/>
-                <stop offset="100%" stop-color="#f8f4ed"/>
-              </linearGradient>
-            </defs>
-            <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#la-env-fill)" stroke="rgba(203,176,110,.45)" stroke-width="1.4"/>
-            <path d="M18 184 L130 110 L242 184" stroke="rgba(203,176,110,.3)" stroke-width="1" fill="none"/>
-            <line x1="90" y1="30" x2="90" y2="20" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="130" y1="24" x2="130" y2="14" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
-            <line x1="170" y1="30" x2="170" y2="20" stroke="#cbb06e" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="110" y1="18" x2="110" y2="10" stroke="#e8d49a" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <line x1="150" y1="18" x2="150" y2="10" stroke="#e8d49a" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <circle cx="130" cy="118" r="16" fill="rgba(203,176,110,.12)" stroke="rgba(203,176,110,.45)" stroke-width="1"/>
-            <text x="130" y="123" text-anchor="middle" font-family="'Pinyon Script',cursive" font-size="13" fill="#8a7535" opacity=".85">L&amp;A</text>
-          </svg>
-          <div class="env-flap-wrap" aria-hidden="true">
-            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
-              <defs>
-                <linearGradient id="la-flap-fill" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#e8d49a"/>
-                  <stop offset="100%" stop-color="#f0ebe0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 0 L112 86 L224 0 Z" fill="url(#la-flap-fill)" stroke="rgba(203,176,110,.45)" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="env-open-content" aria-live="polite">
-          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="8" y="22" width="36" height="24" rx="5"/>
-            <path d="M8 30 Q26 38 44 30"/>
-            <rect x="18" y="8" width="16" height="16" rx="2"/>
-            <path d="M18 8 Q26 3 34 8"/>
-            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
-          </svg>
-          <p class="env-title">Lluvia de Sobres</p>
-          <p class="env-desc">El día del evento habrá un buzón especial<br>donde podrás depositar tu sobre con mucho cariño.</p>
-        </div>
-      </button>
-      <p class="env-tap-hint">Toca el sobre</p>
-    </div>
   </section>
 
   <!-- ÁLBUM COMPARTIDO -->
@@ -1162,20 +1102,6 @@ function initMain(){
     setTimeout(function(){ vel=6; rafId=requestAnimationFrame(inertia); },700);
   })();
 
-  /* ── SOBRE INTERACTIVO (lluvia de sobres) ── */
-  (function(){
-    var btn = document.querySelector('.env-interactive');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
-      var isOpen = btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    btn.addEventListener('touchstart', function(e){
-      e.preventDefault();
-      var isOpen = btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }, {passive:false});
-  })();
 
   /* ── RSVP (panel-invitados API + ?para=&pases=) ── */
   (function initRsvp(){
